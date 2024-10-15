@@ -113,41 +113,6 @@ body {
   left: 20%;
   animation-duration: 10s;
 }
-
-.social-section {
-  text-align: center;
-  margin-top: 60px;
-  color: white;
-}
-
-.blueprint-title {
-  font-size: 36px;
-  font-weight: bold;
-}
-
-.social-text {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #a9a9a9;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-.icon {
-  width: 40px;
-  height: 40px;
-  fill:  white;
-  transition: fill 0.3s ease;
-}
-
-.social-icons a:hover .icon {
-  fill: #ff8f00;
-}
-
 @keyframes fallAndBounce {
   0% {
     transform: translateY(-100vh);
