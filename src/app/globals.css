@@ -1,27 +1,211 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.container {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 600px; /* Adjust this value as needed */
+  padding: 20px;
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: bold;
+  color: #ffa500;
+  position: relative;
+}
+
+.digit {
+  display: inline-block;
+  animation: fallAndBounce 1.5s ease-in-out forwards;
+}
+
+.digit:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.digit:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+.digit:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+.error-message {
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+.error-description {
+  font-size: 1.2rem;
+  color: #bbb;
+  margin-top: 5px;
+}
+
+.home-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ffa500;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #ffbb33;
+}
+
+.decorative-circles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 165, 0, 0.2);
+  animation: move 10s infinite ease-in-out alternate;
+}
+
+.circle.large {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 10%;
+  animation-duration: 6s;
+}
+
+.circle.medium {
+  width: 200px;
+  height: 200px;
+  top: 40%;
+  right: 15%;
+  animation-duration: 8s;
+}
+
+.circle.small {
+  width: 100px;
+  height: 100px;
+  bottom: 20%;
+  left: 20%;
+  animation-duration: 10s;
+}
+
+.social-section {
+  text-align: center;
+  margin-top: 60px;
+  color: white;
+}
+
+.blueprint-title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.social-text {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #a9a9a9;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  fill:  white;
+  transition: fill 0.3s ease;
+}
+
+.social-icons a:hover .icon {
+  fill: #ff8f00;
+}
+
+@keyframes fallAndBounce {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
   }
+  70% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  85% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(50px, 50px) rotate(360deg);
+  }
+}
+/* Social Section */
+.social-section {
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+}
+
+.blueprint-title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.social-text {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #a9a9a9;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  fill: white;
+  transition: fill 0.3s ease;
+  margin-bottom: 20px;
+
+}
+
+.social-icons a:hover .icon {
+  fill: #ff8f00;
 }
